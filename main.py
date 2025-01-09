@@ -1,15 +1,12 @@
 from fastapi import FastAPI
-from routers import task
-from routers import user
-from backend.db import engine
-from app.models import User, Task
+from app.routers import user, task
 
 
 app = FastAPI()
 
 
 @app.get("/")
-async def welcome():
+async def welcome() -> dict:
     return {"message": "Welcome to Taskmanager"}
 
 
